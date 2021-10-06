@@ -1,9 +1,9 @@
 var trex, trexRunning;
-var ground, groundImage;
+var ground
 
 function preload() {
   trexRunning = loadAnimation("trex1.png", "trex2.png", "trex3.png");
-  groundImage = loadImage("ground2.png");
+  
 }
 
 function setup() {
@@ -19,21 +19,13 @@ function setup() {
 
   //create ground sprite
   ground = createSprite(200, 180, 400, 20);
-  ground.addImage("ground", groundImage);
-  ground.x = ground.width / 2;
+  
 }
 
 function draw() {
   background(220);
 
-  ground.velocityX = -2;
-  console.log(ground.x);
-
-  if (ground.x < 0) {
-    ground.x = ground.width / 2;
-  }
-
-  //jumping the trex on space key press
+   //jumping the trex on space key press
   if (keyDown("space")) {
     trex.velocityY = -12;
   }
